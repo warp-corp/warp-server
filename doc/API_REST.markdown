@@ -1,24 +1,24 @@
 # API REST
 
-## TODO: Créer un compte
+## TODO: Create account
 
 * **URL**
 
   /register
 
-* **Méthode**
+* **Method**
 
   `POST`
 
-* **Paramètres d'URL**
+* **URL Params**
 
   `Aucun`
 
-* **Corps de la requête**
+* **Data Params**
 
 	**Mime Type:** `application/json`
 
-  **Exemple:**
+  **Example:**
   
   ```json
   {
@@ -29,26 +29,26 @@
   }
   ```
 
-* **Réponse en cas de succès**
+* **Success Response**
 
   * **Code:** 204
-    **Contenu:** `Aucun`
+    **Content:** `None`
 
-* **Réponse en cas d'erreur**
+* **Error Response**
 
-  * **Code:** 400
-    **Contenu:** `{ "error": "Email already used." }`
+  * **Code:** 400<br>
+    **Content:** `{ "error": "Email already used." }`
 
-  * **Code:** 400
-    **Contenu:** `{ "error": "Invalid email." }`
-
-  * **Code:** 400
-    **Contenu:** `{ "error": "Passwords don't match." }`
+  * **Code:** 400<br>
+    **Content:** `{ "error": "Invalid email." }`
 
   * **Code:** 400
-    **Contenu:** `{ "error": "Nickname already tacken." }`
+    **Content:** `{ "error": "Passwords don't match." }`
 
-* **Exemple d'appel**
+  * **Code:** 400
+    **Content:** `{ "error": "Nickname already taken." }`
+
+* **Sample Call**
 
   **CURL**
   
@@ -56,35 +56,35 @@
   curl -v -X POST -d "{ "nickname": "JohnSnow", "email": "john.snow@winterfell.com", "password": "Winter is coming", "passwordConfirm": "Winter is coming" }" http://warp/register
   ```
 
-## TODO: Accéder aux informations du compte
+## TODO: Show account informations
 
 * **URL**
 
   /account
 
-* **Méthode**
+* **Method**
 
   `GET`
 
-* **Paramètres d'URL**
+* **URL Params**
   
   `Aucun`
 
-* **Corps de la reqête**
+* **Data Params**
 
-  `Aucun`
+  `None`
 
-* **Réponse en cas de succès**
+* **Success Response**
 
   * **Code:** 200
-    **Contenu:** `{ "nickname": "<pseudo_utilisateur>", "email": "<email_utilisateur>", "creationDate": "<date_creation_compte>" }`
+    **Content:** `{ "nickname": "<pseudo_utilisateur>", "email": "<email_utilisateur>", "creationDate": "<date_creation_compte>" }`
 
-* **Réponse en cas d'erreur**
+* **Error Response**
 
   * **Code:** 401
-    **Contenu:** `Aucun`
+    **Content:** `None`
 
-* **Exemple d'appel**
+* **Sample Call**
 
   **CURL**
   
@@ -95,4 +95,3 @@
 ## TODO: Modifier mot de passe du compte
 ## TODO: Modifier pseudonyme du compte
 ## TODO: Modifier email du compte
-
