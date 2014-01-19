@@ -31,21 +31,21 @@
 
 * **Réponse en cas de succès**
 
-  * **Code:** 204 <br />
+  * **Code:** 204
     **Contenu:** `Aucun`
 
 * **Réponse en cas d'erreur**
 
-  * **Code:** 400 <br />
+  * **Code:** 400
     **Contenu:** `{ error: "Email already used." }`
 
-  * **Code:** 400 <br />
+  * **Code:** 400
     **Contenu:** `{ error: "Invalid email." }`
 
-  * **Code:** 400 <br />
+  * **Code:** 400
     **Contenu:** `{ error: "Passwords don't match." }`
 
-  * **Code:** 400 <br />
+  * **Code:** 400
     **Contenu:** `{ error: "Nickname already tacken." }`
 
 * **Exemple d'appel**
