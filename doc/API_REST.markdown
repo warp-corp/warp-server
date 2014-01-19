@@ -16,7 +16,7 @@
 
 * **Data Params**
 
-	**Mime Type:** `application/json`
+  **Mime Type:** `application/json`
 
   **Example:**
   
