@@ -86,10 +86,11 @@
 
 * **Exemple d'appel**
 
-**CURL**
-```bash
-curl -v --user "<nickname>:<password>" http://warp/account
-```
+  **CURL**
+  
+  ```bash
+  curl -v --user "<nickname>:<password>" http://warp/account
+  ```
 
 ## TODO: Modifier mot de passe du compte
 ## TODO: Modifier pseudonyme du compte
