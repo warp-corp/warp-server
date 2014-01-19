@@ -20,14 +20,14 @@
 
   **Exemple:**
   
-    ```json
-    {
-      "email": [string],
-      "nickname": [string],
-      "password": [string],
-      "passwordConfirm": [string]
-    }
-    ```
+  ```json
+  {
+    "email": [string],
+    "nickname": [string],
+    "password": [string],
+    "passwordConfirm": [string]
+  }
+  ```
 
 * **Réponse en cas de succès**
 
@@ -39,7 +39,7 @@
   * **Code:** 400<br />
     **Contenu:** `{ error: "Email already used." }`
 
-  	OU
+  OU
 
   * **Code:** 400<br />
     **Contenu:** `{ error: "Invalid email." }`
@@ -56,8 +56,8 @@
 
 * **Exemple d'appel**
 
-    **CURL**
-    
-    ```bash
-    curl -X POST -d "{ "nickname": "JohnSnow", "email": "john.snow@winterfell.com", "password": "Winter is coming", "passwordConfirm": "Winter is coming" }" http://warp/register
-    ```
+  **CURL**
+  
+  ```bash
+  curl -X POST -d "{ "nickname": "JohnSnow", "email": "john.snow@winterfell.com", "password": "Winter is coming", "passwordConfirm": "Winter is coming" }" http://warp/register
+  ```
