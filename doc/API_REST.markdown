@@ -1,7 +1,8 @@
-# API REST
+API REST
+========
 
-## TODO: Create account
-
+Create account *(status: not implemented)*
+------------------------------------------
 
 * **URL**
 
@@ -32,7 +33,7 @@
 
 * **Success Response**
 
-  * **Code:** 204
+  * **Code:** 204<br>
     **Content:** `None`
 
 * **Error Response**
@@ -43,10 +44,10 @@
   * **Code:** 400<br>
     **Content:** `{ "error": "Invalid email." }`
 
-  * **Code:** 400
+  * **Code:** 400<br>
     **Content:** `{ "error": "Passwords don't match." }`
 
-  * **Code:** 400
+  * **Code:** 400<br>
     **Content:** `{ "error": "Nickname already taken." }`
 
 * **Sample Call**
@@ -57,8 +58,8 @@
   curl -v -X POST -d "{ "nickname": "JohnSnow", "email": "john.snow@winterfell.com", "password": "Winter is coming", "passwordConfirm": "Winter is coming" }" http://warp/register
   ```
 
-## TODO: Show account informations
-
+Show account informations (status: not implemented)
+---------------------------------------------------
 
 * **URL**
 
@@ -78,12 +79,12 @@
 
 * **Success Response**
 
-  * **Code:** 200
+  * **Code:** 200<br>
     **Content:** `{ "nickname": "<pseudo_utilisateur>", "email": "<email_utilisateur>", "creationDate": "<date_creation_compte>" }`
 
 * **Error Response**
 
-  * **Code:** 401
+  * **Code:** 401<br>
     **Content:** `None`
 
 * **Sample Call**
@@ -94,6 +95,9 @@
   curl -v --user "<nickname>:<password>" http://warp/account
   ```
 
-## TODO: Modifier mot de passe du compte
-## TODO: Modifier pseudonyme du compte
-## TODO: Modifier email du compte
+Modifier mot de passe du compte *(status: not implemented)*
+-----------------------------------------------------------
+Modifier pseudonyme du compte *(status: not implemented)*
+---------------------------------------------------------
+Modifier email du compte *(status: not implemented)*
+---------------------------------------------------
