@@ -21,14 +21,16 @@
 	**Mime Type:** `application/json`
 
   **Exemple:**
-  ```json
+  
+```json
   {
   	"email": [string],
   	"nickname": [string],
   	"password": [string],
   	"passwordConfirm": [string]
   }
-  ```
+```
+
 * **Réponse en cas de succès**
 
   * **Code:** 204<br />
