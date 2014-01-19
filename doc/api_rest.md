@@ -97,7 +97,9 @@ Show account informations (status: not implemented)
 
 Modifier mot de passe du compte *(status: not implemented)*
 -----------------------------------------------------------
+
 Modifier pseudonyme du compte *(status: not implemented)*
 ---------------------------------------------------------
+
 Modifier email du compte *(status: not implemented)*
----------------------------------------------------
+----------------------------------------------------
