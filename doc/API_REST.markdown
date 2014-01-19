@@ -39,17 +39,11 @@
   * **Code:** 400<br />
     **Contenu:** `{ error: "Email already used." }`
 
-  OU
-
   * **Code:** 400<br />
     **Contenu:** `{ error: "Invalid email." }`
 
- 	OU
-
   * **Code:** 400<br />
     **Contenu:** `{ error: "Passwords don't match." }`
-  
- 	OU
 
   * **Code:** 400<br />
     **Contenu:** `{ error: "Nickname already tacken." }`
