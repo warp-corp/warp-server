@@ -1,11 +1,22 @@
 var restify = require('restify');
+var mongoose = require('mongoose');
 var config = require('./lib/util/config');
+var logger = require('./lib/util/logger');
 
-var serverConf = config.get('server');
+mongoose.connect(config.get('database'));
 
-var server = restify.createServer(serverConf);
+var serverOpts = config.get('server');
+serverOpts.log = logger;
+
+var server = restify.createServer(serverOpts);
 
 require('./lib/middlewares')(server);
 require('./lib/routes')(server);
 
-server.listen(serverConf.port);
+server.listen(serverOpts.port, serverOpts.host);
+
+
+
+
+
+
