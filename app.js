@@ -11,7 +11,6 @@ serverOpts.log = Logger;
 
 var server = restify.createServer(serverOpts);
 
-require('./lib/middlewares')(server);
 require('./lib/routes')(server);
 
 server.listen(serverOpts.port, serverOpts.host);

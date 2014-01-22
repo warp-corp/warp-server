@@ -1,6 +1,13 @@
-# warp
-### a Sails application
+# Warp
+
+## Démarrer
 
 ```bash
-curl -X POST -d "{ "nickname": "JohnSnow", "email": "john.snow@winterfell.com", "password": "Winter is coming", "passwordConfirm": "Winter is coming" }" http://warp/register
+git clone http://git.lookingfora.name/Will/warp.git
+cd warp
+npm install
+node app
+# ou si besoin, pour afficher les logs de manière "human-friendly"
+# sudo npm install -g bunyan
+# node app | bunyan
 ```
