@@ -1,22 +1,24 @@
 {
   "name": "warp",
-  "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
-  "dependencies": {
-    "sails": "0.9.8",
-    "grunt": "0.4.1",
-    "sails-disk": "~0.9.0",
-    "ejs": "0.8.4",
-    "optimist": "0.3.4",
-    "bcrypt": "~0.7.7"
+  "description": "Warp API Backend",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
   },
   "scripts": {
-    "start": "node app.js",
-    "debug": "node debug app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "app.js",
-  "repository": "",
-  "author": "",
-  "license": ""
+  "repository": {
+    "type": "git",
+    "url": "http://git.lookingfora.name/Will/warp.git"
+  },
+  "author": "william.petit@lookingfora.name",
+  "private": true,
+  "dependencies": {
+    "restify": "~2.6.1",
+    "nconf": "~0.6.9",
+    "bunyan": "~0.22.1",
+    "mongoose": "~3.8.4"
+  }
 }
