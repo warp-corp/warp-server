@@ -1,9 +1,8 @@
 Les Bots
 ========
 
-Un bot est un robot d'exploration envoyé afin d'arpenter les mondes à l'autre bout des portails warp.
+Un "Bot" est un robot d'exploration envoyé afin d'arpenter les mondes à l'autre bout des portails warp.
 Afin d'affronter les dangers qui l'attendent, le bot est équipé de modules qui étendent ses capacités d'action.
-
 
 Structure des données
 ---------------------
@@ -18,7 +17,8 @@ Structure des données
   },
   "player": <PlayerID>,
   "createdAt": <Date>,
-  "modules": [<Module>],
+  "slots": [<Module>],
+  "maxSlots": <Number>,
   "actions": [<Action>]
 }
 ```

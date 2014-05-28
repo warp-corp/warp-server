@@ -5,7 +5,12 @@ exports.server = {
   host: 'localhost',
 };
 
-exports.swagger = {
-  publicUrl: 'localhost:8080',
-  version: '0.0.0'
+// Database settings
+exports.database = {
+  uri: 'mongodb://localhost/warp',
+  options: {
+    server: {
+      auto_reconnect: true
+    }
+  }
 };
