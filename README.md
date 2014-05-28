@@ -1,7 +1,9 @@
 Warp
 ====
 
-Démarrer
+Démarrer avec les sources
+-------------------------
+
 ```
 git clone http://git.lookingfora.name/Will/warp.git
 cd warp
