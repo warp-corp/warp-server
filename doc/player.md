@@ -1,6 +1,7 @@
 Les Joueurs
 ===========
 
+Chaque joueur possède **un et un seul** robot (bot).
 
 Structure des données
 ---------------------
@@ -10,6 +11,7 @@ Structure des données
 ```json
 {
   "name": <String>,
+  "email": <String>,
   "bot": <botID>
 }
 ```
