@@ -11,3 +11,7 @@ git checkout develop
 npm install
 node api
 ```
+**Lancer le ticker**
+```
+node ticker
+```
