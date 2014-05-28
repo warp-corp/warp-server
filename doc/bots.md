@@ -11,7 +11,8 @@ Structure des données
 
 ```json
 {
-  "sector": {
+	"sector": <ZoneID>,
+  "coords": {
     "x": <Number>,
     "y": <Number>
   },
