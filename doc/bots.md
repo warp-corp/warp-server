@@ -23,3 +23,9 @@ Structure des données
   "actions": [<Action>]
 }
 ```
+
+Récupérer son bot
+-----------------
+
+    curl -X GET http://host:port/bot
+
