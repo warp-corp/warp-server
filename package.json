@@ -13,16 +13,17 @@
   "author": "",
   "license": "GPL",
   "dependencies": {
-    "express": "^4.3.1",
+    "apache-crypt": "^1.0.5",
     "body-parser": "^1.2.2",
-    "nconf": "^0.6.9",
-    "mongoose": "^3.8.11",
     "cors": "^2.3.1",
-    "mongoose-validator": "^0.2.2",
+    "express": "^4.3.1",
+    "jayschema": "^0.2.7",
+    "mongoose": "^3.8.11",
     "mongoose-unique-validator": "^0.3.0",
+    "mongoose-validator": "^0.2.2",
+    "nconf": "^0.6.9",
     "passport": "^0.2.0",
     "passport-http": "^0.2.2",
-    "apache-crypt": "^1.0.5",
     "validator": "^3.12.0"
   }
 }
