@@ -19,7 +19,7 @@ Structure des données
 Inscription
 -----------
 
-		curl -X POST -H "Content-Type:application/json" -v -d '[{"name":"username", "password":"password", "email":"email_adress", "tel":"050505"}]' http://<host>:<port>/account
+		curl -X POST -H "Content-Type:application/json" -v -d '[{"name":"username", "password":"password", "email":"email_adress"}]' http://<host>:<port>/account
   
 
 Authentificaiton
