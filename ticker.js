@@ -1,3 +1,4 @@
+/* jshint node: true */
 var mongoose = require('mongoose');
 var config = require('./lib/util/config');
 var TurnManager = require('./lib/util/turn-manager');

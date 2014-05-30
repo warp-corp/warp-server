@@ -1,4 +1,4 @@
-var express = require('express');
+/* jshint node: true */
 var mongoose = require('mongoose');
 var api = require('./lib/routes');
 var config = require('./lib/util/config');
