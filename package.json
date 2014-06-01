@@ -20,10 +20,12 @@
     "cors": "^2.3.1",
     "express": "^4.3.1",
     "jayschema": "^0.2.7",
+    "lodash": "^2.4.1",
     "mongoose": "^3.8.11",
     "mongoose-unique-validator": "^0.3.0",
     "mongoose-validator": "^0.2.2",
     "nconf": "^0.6.9",
+    "node-uuid": "^1.4.1",
     "passport": "^0.2.0",
     "passport-http": "^0.2.2",
     "validator": "^3.12.0"
