@@ -14,3 +14,14 @@ exports.database = {
     }
   }
 };
+
+// Logger settings
+exports.logger = {
+  name: 'Warp',
+  level: 'info'
+};
+
+// Ticker settings
+exports.ticker = {
+  interval: 5000
+};

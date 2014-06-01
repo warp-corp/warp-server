@@ -9,9 +9,11 @@ git clone http://git.lookingfora.name/Will/warp.git
 cd warp
 git checkout develop
 npm install
-node api
+# Si besoin, installer Bunyan
+# sudo npm install -g bunyan
+NODE_ENV=development node api | bunyan
 ```
 **Lancer le ticker**
 ```
-node ticker
+NODE_ENV=development node ticker | bunyan
 ```

@@ -8,4 +8,6 @@ mongoose.connect(
   config.get('database:options')
 );
 
-TurnManager.start();
+TurnManager.start(
+  config.get('ticker').interval
+);
