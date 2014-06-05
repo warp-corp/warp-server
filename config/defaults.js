@@ -2,7 +2,13 @@
 // Server settings
 exports.server = {
   port: 8080,
-  host: 'localhost',
+  host: 'localhost'
+};
+
+// Request rate limiting
+exports.rateLimit = {
+  rate: 1,
+  every: 'second' // 'second', 'minute', 'hour' ou nombre de millisecondes
 };
 
 // Database settings
