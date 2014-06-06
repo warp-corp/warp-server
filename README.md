@@ -34,4 +34,9 @@ Démarrer le jeu
 
 	curl -X POST -H "Content-Type:application/json" -v -u "user:password" -d '{"name":"move", "params": {"dir": "[N|S|E|W|NW|NE|SE|SW]"}}' http://localhost:8080/bot/actions
   
-`"dir"` peut prendre l'une des valeurs entre [] pour Nord, Sud, East, West, et les diagonales.
+`"dir"` peut prendre l'une des valeurs entre [] pour Nord, Sud, East, West, et les diagonales.  
+  
+  
+**Scanner les bots présents dans la zone**  
+
+	curl -X POST -H "Content-Type:application/json" -v -u "user:password" -d '{"name":"scanbot"}' http://localhost:8080/bot/actions

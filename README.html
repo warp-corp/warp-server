@@ -144,4 +144,7 @@ NODE_ENV=development node api | bunyan
 <p><strong>Se déplacer</strong>  </p>
 <pre><code>curl -X POST -H "Content-Type:application/json" -v -u "user:password" -d '{"name":"move", "params": {"dir": "[N|S|E|W|NW|NE|SE|SW]"}}' http://localhost:8080/bot/actions
 </code></pre>
-<p><code>"dir"</code> peut prendre l'une des valeurs entre [] pour Nord, Sud, East, West, et les diagonales.</p></body></html>
+<p><code>"dir"</code> peut prendre l'une des valeurs entre [] pour Nord, Sud, East, West, et les diagonales.  </p>
+<p><strong>Scanner les bots présents dans la zone</strong>  </p>
+<pre><code>curl -X POST -H "Content-Type:application/json" -v -u "user:password" -d '{"name":"scanbot"}' http://localhost:8080/bot/actions
+</code></pre></body></html>
