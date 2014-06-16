@@ -40,3 +40,17 @@ Démarrer le jeu
 **Scanner les bots présents dans la zone**  
 
 	curl -X POST -H "Content-Type:application/json" -v -u "user:password" -d '{"name":"scanbot"}' http://localhost:8080/bot/actions
+
+Générer la documention de l'API au format HTML
+----------------------------------------------
+
+Installer aglio
+```
+sudo npm install aglio -g
+```
+
+Puis générer la doc
+```
+cd warp
+aglio -i doc/api.md -o api.html
+```
