@@ -3,3 +3,4 @@ node_modules
 *.log
 README.html
 api.html
+data.sqlite3
