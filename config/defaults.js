@@ -10,6 +10,21 @@ exports.bcrypt = {
   rounds: 12
 };
 
+// COnfiguration du jeu
+exports.game = {
+
+  // Permet d'appliquer un multiplicateur global sur le temps des cooldowns
+  // Utile pour le développement
+  cooldownMultiplier: 1,
+
+  // Nombre maximum de modules équipés à un instant T par un Bot
+  maxSlots: 10,
+
+  // Actions par défaut accessibles à un Bot
+  defaultActions: ['move', 'scanbot']
+
+};
+
 // Request rate limiting
 exports.rateLimit = {
   rate: 1,
@@ -28,9 +43,4 @@ exports.database = {
 exports.logger = {
   name: 'Warp',
   level: 'info'
-};
-
-// Ticker settings
-exports.ticker = {
-  interval: 5000
 };

@@ -1,11 +1,12 @@
 /* jshint node: true */
-var api = require('./lib/routes');
 var config = require('./lib/util/config');
 var logger = require('./lib/util/logger');
 
 logger.info('Starting API endpoint');
 
 // Start listening
+
+var api = require('./lib/routes');
 
 api.listen(
   config.get('server:port'),

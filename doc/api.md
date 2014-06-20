@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://api.warp-corp.net
+HOST: ${API_ENDPOINT}
 
 # API Warp
 
@@ -15,9 +15,9 @@ Les schémas de validation des données sont écris au format [JSON-Schema](http
 
 # Group Compte
 
-## Opérations liées au compte du joueur [/account]
+## Gérer son compte [/account]
 
-### Créer un nouveau compte [POST]
+## Créer un nouveau compte [POST]
 
 **Exemples**
 
@@ -25,7 +25,7 @@ JQuery
 ```
 $.ajax({
     method: "POST",
-    url: "https://api.warp-corp.net/account"
+    url: "${API_ENDPOINT}/account",
     data: {
         name: "JohnDoe",
         password: "SE5kcgWDPt1sLNoA",
@@ -44,7 +44,7 @@ curl -v \
 -X 'POST' \
 -H 'Content-Type: application/json' \
 -d '{"name": "JohnDoe", "password":"SE5kcgWDPt1sLNoA", "email": "john.doe@warp-corp.net"}' \
-https://api.warp-corp.net/account
+${API_ENDPOINT}/account
 ```
 
 + Request
@@ -80,9 +80,9 @@ https://api.warp-corp.net/account
                 "required": ["name", "password", "email"]
             }
 
-+ Response 201 
++ Response 201
 
-    + Headers 
+    + Headers
 
             Content-Type: application/json
 
@@ -108,7 +108,7 @@ https://api.warp-corp.net/account
                 }
             }
 
-### Récupérer les informations du compte [GET]
+### Récupérer ses informations [GET]
 
 **Authentification requise**
 
@@ -117,8 +117,7 @@ https://api.warp-corp.net/account
 JQuery
 ```
 $.ajax({
-    url: "https://api.warp-corp.net/account"
-    dataType: "json",
+    url: "${API_ENDPOINT}/account",
     headers: {
         "Authorization": "Basic " + btoa(username + ":" + password)
     },
@@ -133,7 +132,7 @@ CURL
 curl -v \
 -X 'GET' \
 -u 'username:password' \
-https://api.warp-corp.net/account
+${API_ENDPOINT}/account
 ```
 
 + Request
@@ -170,6 +169,199 @@ https://api.warp-corp.net/account
                 }
             }
 
+### Supprimer son compte [DELETE]
+
+**Authentification requise**
+
+**Exemples**
+
+JQuery
+```
+$.ajax({
+    url: "${API_ENDPOINT}/account",
+    method: "DELETE",
+    headers: {
+        "Authorization": "Basic " + btoa(username + ":" + password)
+    },
+    success: function() {
+        console.log('Compte supprimé !');
+    }
+})
+```
+
+CURL
+```bash
+curl -v \
+-X 'DELETE' \
+-u 'username:password' \
+${API_ENDPOINT}/account
+```
+
++ Request
+
+    + Headers
+
+            Authorization: Basic base64(username:password)
+
++ Response 204
+
 # Group Jeu
 
-## Opérations liées au Bot [/bot]
+## Récupérer les informations du robot [/bot]
+
+### Récupérer les informations du robot [GET]
+
+**Authentification requise**
+
+**Exemples**
+
+JQuery
+```
+$.ajax({
+    url: "${API_ENDPOINT}/account",
+    headers: {
+        "Authorization": "Basic " + btoa(username + ":" + password)
+    },
+    success: function(bot) {
+        console.log(bot); // Affiche le résultat dans la console
+    }
+})
+```
+
+CURL
+```bash
+curl -v \
+-X 'GET' \
+-u 'username:password' \
+${API_ENDPOINT}/bot
+```
+
++ Response 200
+
+    + Headers
+
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "shield": 100,
+                "sector": {
+                    "x": 0,
+                    "y": 0,
+                    "type": "base",
+                    "safe": 1
+                },
+                "cooldowns": [
+                    {
+                        "action": "move",
+                        "timestamp": 1403291692940
+                    },
+                    {
+                        "action": "scanbot",
+                        "timestamp": 1403291651192
+                    }
+                ],
+                "slots": [],
+                "cargo": [],
+                "cpus": 5,
+                "ram": 128,
+                "max_actions": 2,
+                "max_slots": 10,
+                "max_cargo": 10,
+                "available_actions": [
+                    "move",
+                    "scanbot"
+                ]
+            }
+
+    + Schema
+
+            {
+
+            }
+
+## Effectuer une action [/bot/actions]
+
+### Effectuer une action [POST]
+
+**Authentification requise**
+
+**Exemples**
+
+CURL
+```bash
+curl -v \
+-X 'POST' \
+-H 'Content-Type: application/json' \
+-u 'username:password' \
+-d '{ "name": "move", "params": { "dir": "N" } }' \
+${API_ENDPOINT}/bot/actions
+```
+
++ Request
+
+    + Headers
+
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "action": "move",
+                "params": {
+                    "dir": "N"
+                }
+            }
+
+    + Schema
+
+            {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "params": {
+                        "type": "object"
+                    }
+                },
+                "required": ["name"]
+            }
+
++ Response 200
+
+    + Headers
+
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "action": "move",
+                "results": {
+                    "sector": {
+                        "x": -1,
+                        "y": -5,
+                        "type": "base",
+                        "safe": 0
+                    }
+                }
+            }
+
+    + Schema
+
+            {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "results": {
+                        "type": "object"
+                    }
+                },
+                "required": ["action"]
+            }
