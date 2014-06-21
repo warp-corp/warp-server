@@ -25,12 +25,12 @@ NODE_ENV=development node api | bunyan
 Générer la documention de l'API au format HTML
 ----------------------------------------------
 
-Installer aglio
+Installer aglio  
 ```
 sudo npm install aglio -g
 ```
 
-Puis générer la doc
+Puis générer la doc  
 ```
 cd warp
 aglio -i doc/api.md -o api.html
