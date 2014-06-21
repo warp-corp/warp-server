@@ -30,7 +30,9 @@ exports.up = function(knex, Promise) {
       table.integer('sector_id').references('id').inTable('sectors');
 
       // Propriétés du bot
-      table.integer('shield').defaultTo(100);
+      table.integer('hp').defaultTo(100);
+      table.integer('base_armoring').defaultTo(5);
+      table.integer('base_max_hp').defaultTo(100);
       table.integer('base_max_cargo').defaultTo(10);
       table.integer('base_cpus').defaultTo(5);
       table.integer('base_ram').defaultTo(128);
@@ -84,7 +86,6 @@ exports.up = function(knex, Promise) {
       table.string('type');
       table.string('special_actions');
       table.string('banned_actions');
-      table.boolean('safe');
 
     }),
 

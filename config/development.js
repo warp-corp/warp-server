@@ -9,5 +9,5 @@ exports.database = {
 };
 
 exports.game = {
-  cooldownMultiplier: 1/10
+  cooldownMultiplier: 1/100
 };
