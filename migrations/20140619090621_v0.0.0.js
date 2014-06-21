@@ -82,6 +82,8 @@ exports.up = function(knex, Promise) {
       table.integer('x');
       table.integer('y');
       table.string('type');
+      table.string('special_actions');
+      table.string('banned_actions');
       table.boolean('safe');
 
     }),
@@ -114,10 +116,11 @@ exports.up = function(knex, Promise) {
       id: 0,
       x: 0,
       y: 0,
+      special_actions: ['unload', 'build'].join(','),
+      banned_actions: ['basic_strike'].join(','),
       updated_at: Date.now(),
       created_at: Date.now(),
-      type: 'base',
-      safe: true
+      type: 'base'
     })
 
   ]);

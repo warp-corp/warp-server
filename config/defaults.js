@@ -21,7 +21,7 @@ exports.game = {
   maxSlots: 10,
 
   // Actions par défaut accessibles à un Bot
-  defaultActions: ['move', 'scanbot']
+  defaultActions: ['move', 'scanbot', 'basic_strike']
 
 };
 
