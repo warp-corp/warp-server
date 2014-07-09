@@ -6,8 +6,8 @@ Démarrer avec les sources
 
 ```
 # Récupération des sources
-git clone http://git.lookingfora.name/Will/warp.git
-cd warp
+git clone https://github.com/warp-corp/warp-server.git
+cd warp-server
 git checkout develop
 
 # Installation des dépendances
@@ -35,3 +35,8 @@ Puis générer la doc
 cd warp
 aglio -i doc/api.md -o api.html
 ```
+
+Licence
+-------
+
+AGPL
