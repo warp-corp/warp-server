@@ -15,7 +15,7 @@ npm install
 
 # Initialisation de la BDD
 # npm install sqlite3 # Base de développement
-./node_modules/knex/lib/bin/cli.js migrate:latest
+npm run migrate
 
 # Si besoin, installer Bunyan
 # sudo npm install -g bunyan
