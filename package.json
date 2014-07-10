@@ -2,7 +2,7 @@
   "name": "warp-server",
   "version": "0.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "./node_modules/knex/lib/bin/cli.js migrate:latest"

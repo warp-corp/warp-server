@@ -19,7 +19,7 @@ npm run migrate
 
 # Si besoin, installer Bunyan
 # sudo npm install -g bunyan
-NODE_ENV=development node api | bunyan
+NODE_ENV=development node server | bunyan
 ```
 
 Générer la documention de l'API au format HTML
