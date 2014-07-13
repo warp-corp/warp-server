@@ -28,6 +28,7 @@
     "lodash": "^2.4.1",
     "nconf": "^0.6.9",
     "node-uuid": "^1.4.1",
+    "noisejs": "^2.1.0",
     "passport": "^0.2.0",
     "passport-http": "^0.2.2",
     "validator": "^3.12.0"

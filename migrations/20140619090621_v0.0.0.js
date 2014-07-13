@@ -83,6 +83,7 @@ exports.up = function(knex, Promise) {
       table.timestamps();
       table.integer('x');
       table.integer('y');
+      table.integer('altitude');
       table.string('type');
       table.string('special_actions');
       table.string('banned_actions');
@@ -111,20 +112,23 @@ exports.up = function(knex, Promise) {
 
     }),
 
-    /* Entrées par défaut */
+    /* Seeding */
 
-    knex('sectors').insert({
-      id: 0,
-      x: 0,
-      y: 0,
-      special_actions: ['unload', 'build'].join(','),
-      banned_actions: ['basic_strike'].join(','),
-      updated_at: Date.now(),
-      created_at: Date.now(),
-      type: 'base'
-    })
 
-  ]);
+  ]).then(function() {
+
+    var sectors = require('../lib/game/sectors');
+
+    var origin = sectors.getSector(0, 0);
+    origin.id = 0;
+    origin.special_actions = ['unload', 'build'].join(',');
+    origin.banned_actions = ['unload', 'build'].join(',');
+    origin.updated_at = Date.now();
+    origin.created_at = Date.now();
+
+    return knex('sectors').insert(origin);
+
+  });
 
 };
 
