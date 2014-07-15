@@ -122,7 +122,7 @@ exports.up = function(knex, Promise) {
     var origin = sectors.getSector(0, 0);
     origin.id = 0;
     origin.special_actions = ['unload', 'build'].join(',');
-    origin.banned_actions = ['unload', 'build'].join(',');
+    origin.banned_actions = ['basic_strike', 'scanbot'].join(',');
     origin.updated_at = Date.now();
     origin.created_at = Date.now();
 
