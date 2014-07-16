@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>Warp - MapViewer</title>
+    <style>
+
+      body, #map {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #map {
+        position: relative;
+        background: black;
+        overflow: auto;
+      }
+
+      .sector {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        box-sizing: border-box;
+      }
+
+      .sector:hover {
+        border: 1px solid #ccc;
+      }
+
+      .sector.water{
+        background: blue;
+      }
+
+      .sector.plains{
+        background: green;
+      }
+
+      .sector.swamps {
+        background: #425E41;
+      }
+
+      .sector.hills {
+        background: #4D402D;
+      }
+
+      .sector.mountains {
+        background: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      (function() {
+
+        var map = document.getElementById('map');
+
+        function fetchSectors(cb) {
+          var req = new XMLHttpRequest();
+          req.onload = function() {
+            return cb(JSON.parse(this.responseText));
+          };
+          req.open("get", "http://localhost:8081", true);
+          req.send();
+        };
+
+        function updateMap() {
+          fetchSectors(function(sectors) {
+            map.innerHTML = '';
+            var sectorSize = 20;
+            var mapRect = map.getBoundingClientRect();
+            var offsetX = mapRect.width/2;
+            var offsetY = mapRect.height/2;
+            sectors.forEach(function(sector) {
+              var el = document.createElement('div');
+              el.className = 'sector ' + sector.type;
+              el.style.left = (sector.x * sectorSize + offsetX) + 'px';
+              el.style.top = (sector.y * sectorSize + offsetY) + 'px';
+              el.title = getTooltip(sector);
+              map.appendChild(el);
+            })
+          });
+        }
+
+        function getTooltip(sector) {
+          return Object.keys(sector).map(function(key) {
+            return key + ': ' + sector[key];
+          }).join('\n');
+        }
+
+        updateMap();
+        setInterval(updateMap, 5000);
+
+
+      }())
+    </script>
+  </body>
+</html>

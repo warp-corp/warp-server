@@ -1,8 +1,6 @@
-Warp
-====
+# Warp
 
-Démarrer avec les sources
--------------------------
+## Démarrer avec les sources
 
 ```
 # Récupération des sources
@@ -21,9 +19,9 @@ npm run migrate
 # sudo npm install -g bunyan
 NODE_ENV=development node server | bunyan
 ```
+## Outils
 
-Générer la documention de l'API au format HTML
-----------------------------------------------
+### Générer la documention de l'API au format HTML
 
 Installer aglio  
 ```
@@ -36,7 +34,18 @@ cd warp
 aglio -i doc/api.md -o api.html
 ```
 
-Licence
--------
+### Administration: Afficher la carte des secteurs
+
+Lancer le micro-serveur d'aggréagation des secteurs
+```
+cd warp-server
+# Lancer un petit serveur HTTP écoutant sur le port 8081
+node tools/map-viewer/server
+```
+Bien se placer dans le répertoire racine (`warp-server`) sinon des erreurs apparaitront.
+
+Puis dans un navigateur, afficher `tools/map-viewer/index.html`
+
+## Licence
 
 AGPL
