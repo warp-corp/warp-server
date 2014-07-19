@@ -1,16 +1,15 @@
-var http = require('http');
+var express = require('express');
+var app = express();
 var Sector = require('../../lib/models/sector');
-var server = http.createServer(requestHandler);
 
-function requestHandler(req, res) {
+app.get('/sectors', function(req, res) {
+  res.set('Content-Type', 'application/json');
   Sector.fetchAll()
     .then(function(sectors) {
-      res.writeHead(200, {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      });
-      res.end(JSON.stringify(sectors));
+      res.send(sectors);
     });
-}
+});
 
-server.listen(8081);
+app.use(express.static(__dirname));
+
+app.listen(8081);

@@ -34,17 +34,17 @@ cd warp
 aglio -i doc/api.md -o api.html
 ```
 
-### Administration: Afficher la carte des secteurs
+### Administration: Afficher la carte globale
 
-Lancer le micro-serveur d'aggréagation des secteurs
+Lancer le micro-serveur d'aggrégation des secteurs
 ```
 cd warp-server
 # Lancer un petit serveur HTTP écoutant sur le port 8081
 node tools/map-viewer/server
 ```
-Bien se placer dans le répertoire racine (`warp-server`) sinon des erreurs apparaitront.
+**/!\** Bien se placer dans le répertoire racine (`warp-server`) sinon le serveur ne trouvera pas le fichier de configuration du jeu.
 
-Puis dans un navigateur, afficher `tools/map-viewer/index.html`
+Puis dans un navigateur, afficher `http://localhost:8081`
 
 ## Licence
 

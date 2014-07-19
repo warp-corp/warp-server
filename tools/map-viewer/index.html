@@ -61,7 +61,7 @@
           req.onload = function() {
             return cb(JSON.parse(this.responseText));
           };
-          req.open("get", "http://localhost:8081", true);
+          req.open("get", "/sectors", true);
           req.send();
         };
 
